@@ -1,6 +1,6 @@
 #Set up
 gn = "Bibo"
-print ("\nWelcome Adventurer to ", gn,"!\nHere you can play all sorts of text based puzzle-adventure game related to rusty lake!\n")
+print ("\nWelcome Adventurer to ", gn,"!\nHere you can play all sorts of text based puzzle-adventure games related to rusty lake!\n")
 
 error = ("I don't quite understand it. Please answer it again.") #for incorrect entries
 
@@ -29,9 +29,10 @@ while True:
 print("Ok", pn)
 
 #Game starting
+print("Short Story begins!")
 print(pn, "You are now trapped in the centre of an unfamiliar room facing NORTH in the middle of nowhere!")
-print("The room is nicely furnished in a Vintage European Style with four walls in the shade of Luxury Green around you")
-print("You are now going to escape this room and find out what is happening!")
+print("The room is nicely furnished in a Vintage European Style with four walls in the shade of Luxury Green around you\n")
+print("You are now going to escape this room and find out what is happening!\n")
 while True: 
     c1 = str(input("In front of you, there's a door. Do you want to: \nA)try to open it? \nB)or take a look around?\n"))
     if c1 == "A":
@@ -68,7 +69,9 @@ while True:
                     print("And the BLUE tuxedo magically appeared on your body.")
                     c3 = str(input("Do you still want to look at the picture or the sewing mannequin(Y/N)\n"))
                 elif c5 == "B":
-                    c3 = str(input("Do you still want to look at the picture or the sewing mannequin?"))
+                    c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
+                else:
+                    print(error)
         elif c3 != "N":
             print(error)
         else:
@@ -88,70 +91,95 @@ while True:
                 print("|       3       |")
                 print("-----------------")
                 print("|_______4_______|")
-                while True: 
-                    c9 = int(input("Which drawer do you want to open? (1/2/3/4)\n"))
-                    if c9 == 1:
-                        print ("There's nothing inside.")
+                c9 = int(input("Which drawer do you want to open? (1/2/3/4)\n"))
+                if c9 == 1:
+                    print ("There's nothing inside.")
+                    c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
+                    if c10 == "Y":
+                        print(c9)
+                    elif c10 == "N":
+                        c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
+                    else:
+                        print(error)
+                elif c9 == 2:
+                    print("It's locked")
+                    c12 = str(input("Do you know the four digit password? [Y(es)/N(o)]\n"))
+                    if c12 == "Y":
+                        c13 = str(input("Please enter the password: _ _ _ _\n"))
+                        if c13 == "1935":
+                            print("There's two bottles of liquid.")
+                            print("One has BLUE liquid inside with a label 'Harvey'")
+                            print("The other one has RED liquid inside with a label 'Bloody Mary'")
+                            c14 = str(input("*FINAL DECISION* Which liquid do you want to drink? [R(ed)/B(lue)]\n"))
+                            if c14 == "R":
+                                print("You're dead")
+                                print("You transform to a person named 'Bob Hill'.")
+                                print("You are transfered to a mental health faculty")
+                                print("The White Door")
+                                print("To be Continued...")
+                                break
+                            elif c14 == "B":
+                                print("The door opens")
+                                print("Mr.Owl is waiting for you.")
+                                print("He says, 'Welcome to your memory'")
+                                print("Harvey")
+                                print("END")
+                                break
+                        else:
+                            print("It's wrong, please try it again!")
+                            print(c12)
+                    elif c12 == "N": 
                         c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
                         if c10 == "Y":
                             print(c9)
                         elif c10 == "N":
+                            c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
                             break
                         else:
                             print(error)
-                    elif c9 == 2:
-                        print("It's locked")
-                        c12 = str(input("Do you know the four digit password? [Y(es)/N(o)]\n"))
-                        if c12 == "Y":
-                            c13 = str(input("Please enter the password: _ _ _ _\n"))
-                            if c13 == "1935":
-                                print("There's two bottles of liquid.")
-                                print("One has BLUE liquid inside with a label 'Harvey'")
-                                print("The other one has RED liquid inside with a label 'Bloody Mary'")
-                                c14 = str(input("Do you wanna drink the liquid? [Y(es)/N(o)]\n"))
-                            else:
-                                print("It's wrong, please try it again!")
-                                print(c12)
-                        elif c12 == "N":
-                            c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
-                            if c10 == "Y":
-                                print(c9)
-                            elif c10 == "N":
-                                break
-                            else:
-                                print(error)
-                    elif c9 == 3:
-                        print("There's nothing there.")
-                        c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
-                        if c10 == "Y":
-                            print(c9)
-                        elif c10 == "N":
-                            break
-                    elif c9 == 4:
-                        print("There's a picture.")
-                        c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
-                        if c10 == "Y":
-                            print(c9)
-                        elif c10 == "N":
-                            break
-                    else:
-                        print("We don't have a {}th drawer".format(c9))
-                        c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
-                        if c10 == "Y":
-                            print(c9)
-                        elif c10 == "N":
-                            break
+                elif c9 == 3:
+                    print("There's nothing there.")
+                    c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
+                    if c10 == "Y":
+                        print(c9)
+                    elif c10 == "N":
+                        c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
+                        break
+                elif c9 == 4:
+                    print("There's a picture of a man figure in a tuxedo with an OWL head.")
+                    c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
+                    if c10 == "Y":
+                        print(c9)
+                    elif c10 == "N":
+                        c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
+                        break
+                else:
+                    print("We don't have a {}th drawer".format(c9))
+                    c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
+                    if c10 == "Y":
+                        print(c9)
+                    elif c10 == "N":
+                        c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
+                        break
             elif c8 == "B":
                 print("The clock shows 19:35")
-                
+                c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
+                if c10 == "Y":
+                    print(c2)
+                elif c10 == "N":
+                    print(c2)
+                else:
+                    print(error)
             elif c8 == "C":
-                print("There's someone calling right now")
-                print("You heard a familiar voice.")
-                print("It says\n'All that you touch, you change'\n'There will be blood'\n'The past is never dead, it's not even the past.'")
-                print("")
+                print("There's someone calling right now and ysou heard a familiar voice.")
+                print("It says\nHello...This is Mr.Owl...\n'Some may find this place hard to leave'\n'There will be blood'\n'The past is never dead, it's not even the past.'\n")
                 print("You get goosegumps all over your body, but the voice calms you down.")
-                print("At last, he says\n'Find your FATE'")
-                break
+                print("At last, he says\n'Find your *FATE*'\n")
+                c10 = str(input("Do you wanna keep looking? [Y(es)/N(o)]\n"))
+                if c10 == "Y":
+                    print(c2)
+                elif c10 == "N":
+                    break
             else: 
                 print(error)
         elif c7 == "N":
@@ -167,14 +195,12 @@ while True:
             print("The blueness in your veins seems to remind you that you are something special.")
             c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
         elif c11 == "N":
-            c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
+             c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))
         else:
             print(error)
     else:
         print(error)
         c2 = str(input("Which way do you want to turn?\n[E(ast)/W(est)/S(outh)]\n"))   
-
-
 
         
 
